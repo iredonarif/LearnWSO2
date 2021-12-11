@@ -1,5 +1,5 @@
 # Learning WSO2
-Self exercices to learn step by step WSO2 technology using the provide modules.
+Self exercices to learn step by step WSO2 technology using the provided modules.
 
 ## What's WSO2 ?
 WSO2 is an open-source technology provider founded in 2005. It offers an enterprise platform for integrating application programming interfaces, applications, and web services locally and across the Internet (wikipedia).
