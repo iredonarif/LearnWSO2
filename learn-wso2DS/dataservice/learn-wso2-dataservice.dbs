@@ -1,0 +1,213 @@
+<data transports="http https" serviceGroup="" serviceNamespace="" name="learn-wso2-dataservice">
+  <description />
+  <config id="learnWso2DS">
+    <property name="driverClassName">com.mysql.jdbc.Driver</property>
+    <property name="url">jdbc:mysql://localhost:3306/learning_wso2</property>
+    <property name="username">root</property>
+    <property name="password">Ogbiredon001!</property>
+  </config>
+  <resource method="POST" path="add-user">
+    <description>Resource to add a user.</description>
+    <call-query href="addUser">
+      <with-param name="firstName" query-param="firstName" />
+      <with-param name="lastName" query-param="lastName" />
+      <with-param name="email" query-param="email" />
+      <with-param name="gender" query-param="gender" />
+      <with-param name="role" query-param="role" />
+    </call-query>
+  </resource>
+  <resource method="GET" path="get-users">
+    <description>Resource to get the list of all users</description>
+    <call-query href="getUsers" />
+  </resource>
+  <resource method="POST" path="get-user-by-email">
+    <description>Resource to get a user by email</description>
+    <call-query href="getUserByEmail">
+      <with-param name="email" query-param="email" />
+    </call-query>
+  </resource>
+  <resource method="GET" path="get-sellers">
+    <description>Resource to get the list of all sellers</description>
+    <call-query href="getSellers" />
+  </resource>
+  <resource method="GET" path="get-admins">
+    <description>Resource to get the list of all admins.</description>
+    <call-query href="getAdmins" />
+  </resource>
+  <resource method="GET" path="get-products">
+    <description>Resource to get the list of products</description>
+    <call-query href="getProducts" />
+  </resource>
+  <resource method="POST" path="get-user-sales">
+    <description>Resource to get sales for a given seller.</description>
+    <call-query href="getUserSales">
+      <with-param name="userId" query-param="userId" />
+    </call-query>
+  </resource>
+  <resource method="POST" path="get-sale-details">
+    <description>Resource to get sale details.</description>
+    <call-query href="getSaleDetails">
+      <with-param name="saleId" query-param="saleId" />
+    </call-query>
+  </resource>
+  <query id="addUser" useConfig="learnWso2DS">
+    <sql>INSERT INTO users(first_name, last_name, email, gender, role) VALUES(?, ?, ?, ?, ?);</sql>
+    <param type="IN" name="firstName" paramType="SCALAR" sqlType="STRING" optional="false" />
+    <param type="IN" name="lastName" paramType="SCALAR" sqlType="STRING" optional="false" />
+    <param type="IN" name="email" paramType="SCALAR" sqlType="STRING" optional="false" />
+    <param type="IN" name="gender" paramType="SCALAR" sqlType="STRING" optional="false" />
+    <param type="IN" name="role" paramType="SCALAR" sqlType="STRING" optional="false" />
+  </query>
+  <query id="getUsers" useConfig="learnWso2DS">
+    <sql>SELECT first_name, last_name, email, gender, role, created_at, updated_at from users;</sql>
+    <result outputType="json">
+    {
+	    "data": {
+	        "users": [
+	        	"id": $id
+	            "firstName": $first_name,
+	            "lastName": $last_name,
+	            "email": $email,
+	            "role": $role,
+	            "createdAt": $created_at,
+	            "updatedAt": $updated_at
+	        ]
+	    }
+	}
+	</result>
+  </query>
+  <query id="getUserByEmail" useConfig="learnWso2DS">
+    <sql>SELECT * FROM users WHERE email = ?;</sql>
+    <param type="IN" name="email" paramType="SCALAR" sqlType="STRING" optional="false" />
+    <result outputType="json">
+	    {
+		    "user": {
+		       "id": $id,
+		       "firstName": $first_name,
+		       "lastName": $last_name,
+		       "email": $email,
+		       "gender: $gender,
+		       "role": $role,
+		       "createdAt": $created_at,
+		       "updatedAt": $updated_at
+		    }
+		}
+	</result>
+  </query>
+  <query id="getSellers" useConfig="learnWso2DS">
+    <sql>SELECT * FROM users WHERE role = 'seller';</sql>
+    <result outputType="json">
+	    {
+		    "data": {
+		        "users": [
+		         	"id": $id,
+		            "firstName": $first_name,
+		            "lastName": $last_name,
+		            "email": $email,
+		            "role": $role,
+		            "createdAt": $created_at,
+		            "updatedAt": $updated_at
+		        ]
+		    }
+		}
+	</result>
+  </query>
+  <query id="getAdmins" useConfig="learnWso2DS">
+    <sql>SELECT * FROM users WHERE role = 'admin';</sql>
+    <result outputType="json">
+	    {
+		    "data": {
+		        "users": [
+		         	"id": $id,
+		            "firstName": $first_name,
+		            "lastName": $last_name,
+		            "email": $email,
+		            "role": $role,
+		            "createdAt": $created_at,
+		            "updatedAt": $updated_at
+		        ]
+		    }
+		}
+	</result>
+  </query>
+  <query id="getProducts" useConfig="learnWso2DS">
+    <sql>SELECT * FROM products;</sql>
+    <result outputType="json">
+	    {
+		   "data": {
+		      "products": [
+		          {
+		             "id": $id,
+		             "label": $label,
+		             "unitPrice": $unit_price,
+		             "amount": $amount,
+		             "description": $description,
+		             "createdAt": $created_at,
+		             "updatedAt": $updated_at
+		          }
+		      ]
+		   }
+		}
+	</result>
+  </query>
+  <query id="getUserSales" useConfig="learnWso2DS">
+    <sql>SELECT * FROM sales WHERE user_id = ?;</sql>
+    <param type="IN" name="userId" paramType="SCALAR" sqlType="STRING" optional="false" />
+    <result outputType="json">
+	    {
+		   "data": {
+		      "sales": [
+		          {
+		             "id": $id,
+		             "amount": $amount,
+		             "userId": $user_id,
+		             "createdAt": $created_at
+		           }
+		      ]
+		   }   
+		}
+  </result>
+  </query>
+  <query id="getSaleDetails" useConfig="learnWso2DS">
+    <sql>SELECT * FROM sale_lines WHERE sale_id = ?;</sql>
+    <param type="IN" name="saleId" paramType="SCALAR" sqlType="STRING" optional="false" />
+  </query>
+  <query id="getPeriodSales" useConfig="learnWso2DS">
+    <sql>SELECT * FROM sales WHERE (created_at BETWEEN ? AND ?);</sql>
+    <param type="IN" name="startDate" paramType="SCALAR" sqlType="STRING" optional="false" />
+    <param type="IN" name="endDate" paramType="SCALAR" sqlType="STRING" optional="false" />
+    <result outputType="json">
+	    {
+		   "data": {
+		      "sales": [
+		          {
+		             "id": $id,
+		             "amount": $amount,
+		             "userId": $user_id,
+		             "createdAt": $created_at
+		           }
+		      ]
+		   }   
+		}
+	</result>
+  </query>
+  <query id="saveSale" useConfig="learnWso2DS">
+    <sql>INSERT INTO sales(amount, user_id) VALUES(?, ?);</sql>
+    <param type="IN" name="amount" paramType="SCALAR" sqlType="STRING" optional="false" />
+    <param type="IN" name="userId" paramType="SCALAR" sqlType="INTEGER" optional="false" />
+  </query>
+  <resource method="POST" path="get-period-sales">
+    <description>Resource to get sales between a given period (start date - end date).</description>
+    <call-query href="getPeriodSales">
+      <with-param name="startDate" query-param="startDate" />
+      <with-param name="endDate" query-param="endDate" />
+    </call-query>
+  </resource>
+  <resource method="POST" path="save-sales">
+    <description>Resource to save sales.</description>
+    <call-query href="saveSale">
+      <with-param name="amount" query-param="amount" />
+      <with-param name="userId" query-param="userId" />
+    </call-query>
+  </resource>
+</data>

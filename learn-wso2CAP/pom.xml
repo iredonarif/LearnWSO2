@@ -7,7 +7,7 @@
     <artifactId>learn-wso2</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
-  <groupId>com.example</groupId>
+  <groupId>com.learnwso2</groupId>
   <artifactId>learn-wso2CAP</artifactId>
   <version>1.0.0-SNAPSHOT</version>
   <packaging>carbon/application</packaging>
