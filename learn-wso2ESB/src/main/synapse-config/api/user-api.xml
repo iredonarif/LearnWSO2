@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/user" name="user-api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" url-mapping="/add">
+        <inSequence>
+            <sequence key="learn-wso2-add-user-sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="learn-wso2-generic-error-sequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" url-mapping="/list">
+        <inSequence>
+            <sequence key="learn-wso2-get-users-sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="learn-wso2-generic-error-sequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" url-mapping="/sellers">
+        <inSequence>
+            <sequence key="learn-wso2-get-sellers-sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="learn-wso2-generic-error-sequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" url-mapping="/admins">
+        <inSequence>
+            <sequence key="learn-wso2-get-admins-sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="learn-wso2-generic-error-sequence"/>
+        </faultSequence>
+    </resource>
+</api>

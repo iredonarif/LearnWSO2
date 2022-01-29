@@ -1,0 +1,10 @@
+---
+key: "product-api-1.0.0"
+name : "product-api"
+displayName : "product-api"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/product"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false

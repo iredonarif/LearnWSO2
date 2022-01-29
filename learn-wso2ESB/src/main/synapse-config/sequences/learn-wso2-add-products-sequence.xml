@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="learn-wso2-add-products-sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <!-- <sequence key="learn-wso2-add-product-validate-request-sequence"/> -->
+    <payloadFactory media-type="json">
+        <format>
+        	{
+        		"_postadd-products_batch_req": { 
+        			"_postadd-products": $1
+        	}
+        </format>
+        <args>
+            <arg evaluator="json" expression="$.products"/>
+        </args>
+    </payloadFactory>
+    <call>
+        <endpoint>
+            <http method="post" uri-template="http://localhost:8290/services/learn-wso2-dataservice.HTTPEndpoint/add-products_batch_req">
+                <suspendOnFailure>
+                    <initialDuration>-1</initialDuration>
+                    <progressionFactor>1.0</progressionFactor>
+                </suspendOnFailure>
+                <markForSuspension>
+                    <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                </markForSuspension>
+            </http>
+        </endpoint>
+    </call>
+    <property name="code" scope="default" type="STRING" value="200"/>
+    <property name="message" scope="default" type="STRING" value="Request executed successfully."/>
+    <property name="data" scope="default" type="STRING" value="null"/>
+    <sequence key="learn-wso2-common-response-sequence"/>
+</sequence>

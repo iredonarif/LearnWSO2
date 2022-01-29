@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/product" name="product-api" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" url-mapping="/add">
+        <inSequence>
+            <sequence key="learn-wso2-add-product-sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="learn-wso2-generic-error-sequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" url-mapping="/add-many">
+        <inSequence>
+            <sequence key="learn-wso2-add-products-sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="learn-wso2-generic-error-sequence"/>
+        </faultSequence>
+    </resource>
+    <resource methods="GET" url-mapping="/all">
+        <inSequence>
+            <sequence key="learn-wso2-get-all-products-sequence"/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence>
+            <sequence key="learn-wso2-generic-error-sequence"/>
+        </faultSequence>
+    </resource>
+</api>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="learn-wso2-add-user-validate-request-sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <validate cache-schema="true">
+        <schema key="learn-wso2-add-user-validate-request"/>
+        <on-fail>
+            <property expression="fn:concat('Missing required parameters: ', $ctx:ERROR_MESSAGE)" name="VALIDATION_ERROR_MESSAGE" scope="default" type="STRING"/>
+            <property name="errorCode" scope="default" type="INTEGER" value="400"/>
+            <property name="httpCode" scope="default" type="STRING" value="400"/>
+            <sequence key="learn-wso2-generic-error-sequence"/>
+        </on-fail>
+    </validate>
+</sequence>

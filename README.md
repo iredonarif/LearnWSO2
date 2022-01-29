@@ -6,7 +6,7 @@ WSO2 is an open-source technology provider founded in 2005. It offers an enterpr
 
 ## Repository content
 * API development
-* inputs validation
+* Inputs validation
 * Endpoints calls
 * Connection to Database (1 or more)
 * Send Email
@@ -16,7 +16,7 @@ WSO2 is an open-source technology provider founded in 2005. It offers an enterpr
 ## How to start ?
 * Java
 * Maven
-* WSO2 Integration Studo (IDE for development & drap and drop)
+* WSO2 Integration Studo (IDE for development & drag and drop)
 * Postman / Curl (or any other Api testing tool)
 
 ## Note

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><resource name="learn-wso2-add-user-validate-request.xsd" isCollection="false" path="/_system/config/endpoints/xsd/learn-wso2-add-user-validate-request.xsd" registryUrl="https://localhost:9443/registry" status="added">
+    <mediaType>application/x-xsd+xml</mediaType>
+</resource>

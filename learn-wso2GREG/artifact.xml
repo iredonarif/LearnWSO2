@@ -1,1 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><artifacts/>
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="learn-wso2-add-user-validate-request" groupId="com.example.resource" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+        <item>
+            <file>xsd/learn-wso2-add-user-validate-request.json</file>
+            <path>/_system/config/xsd</path>
+            <mediaType>application/json</mediaType>
+            <properties/>
+        </item>
+    </artifact>
+</artifacts>

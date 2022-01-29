@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="learn-wso2-get-all-products-sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <call>
+        <endpoint>
+            <http method="get" uri-template="http://localhost:8290/services/learn-wso2-dataservice.HTTPEndpoint/get-products">
+                <suspendOnFailure>
+                    <initialDuration>-1</initialDuration>
+                    <progressionFactor>1</progressionFactor>
+                </suspendOnFailure>
+                <markForSuspension>
+                    <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                </markForSuspension>
+            </http>
+        </endpoint>
+        <source contentType="application/xml" type="body"/>
+        <target type="property">products</target>
+    </call>
+    <property name="code" scope="default" type="STRING" value="200"/>
+    <property name="message" scope="default" type="STRING" value="Request executed successfully"/>
+    <sequence key="learn-wso2-common-response-sequence"/>
+</sequence>

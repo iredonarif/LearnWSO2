@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="learn-wso2-generic-success-response-sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <payloadFactory media-type="xml">
+        <format>
+            <inline xmlns=""/>
+        </format>
+        <args/>
+    </payloadFactory>
+    <sequence key="learn-wso2-common-response-sequence"/>
+</sequence>

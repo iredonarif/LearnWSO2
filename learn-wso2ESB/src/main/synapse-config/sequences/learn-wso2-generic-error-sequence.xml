@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="learn-wso2-generic-error-sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <filter regex="true" source="boolean(get-property('VALIDATION_ERROR_MESSAGE'))">
+        <then>
+            <property expression="get-property('VALIDATION_ERROR_MESSAGE')" name="ERROR_MESSAGE" scope="default" type="STRING"/>
+        </then>
+        <else>
+            <property expression="$ctx:ERROR_MESSAGE" name="ERROR_MESSAGE" scope="default" type="STRING"/>
+            <property name="errorCode" scope="default" type="STRING" value="500"/>
+        </else>
+    </filter>
+    <filter regex="true" source="get-property('httpCode')">
+        <then>
+            <property expression="json-eval($.httpCode)" name="HTTP_SC" scope="axis2" type="STRING"/>
+        </then>
+        <else>
+            <property name="HTTP_SC" scope="axis2" type="STRING" value="500"/>
+        </else>
+    </filter>
+    <payloadFactory media-type="json">
+        <format>
+        	{
+                "error": {
+                	"code": $1,
+                	"message": "$2"
+                }
+           	}
+		</format>
+        <args>
+            <arg evaluator="xml" expression="get-property('errorCode')"/>
+            <arg evaluator="xml" expression="get-property('ERROR_MESSAGE')"/>
+        </args>
+    </payloadFactory>
+    <respond/>
+</sequence>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="learn-wso2-common-response-sequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <payloadFactory media-type="json">
+        <format>
+        	{
+        		"status": {
+        			"code": $1,
+        			"message": "$2",
+        		},
+                "data": $3
+           	}
+		</format>
+        <args>
+            <arg evaluator="xml" expression="get-property('code')"/>
+            <arg evaluator="xml" expression="get-property('message')"/>
+            <arg evaluator="json" expression="$.data"/>
+        </args>
+    </payloadFactory>
+    <respond/>
+</sequence>

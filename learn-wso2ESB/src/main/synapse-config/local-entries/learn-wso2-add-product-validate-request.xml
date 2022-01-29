@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localEntry key="learn-wso2-add-product-validate-request" xmlns="http://ws.apache.org/ns/synapse"><![CDATA[{  "$schema": "http://json-schema.org/draft-04/schema#",  "type": "object",  "properties": {    "label": {      "type": "string"    },    "unitPrice": {      "type": "integer"    },    "description": {      "type": "string"    }  },  "required": [    "label",    "unitPrice",    "description"  ]}]]></localEntry>

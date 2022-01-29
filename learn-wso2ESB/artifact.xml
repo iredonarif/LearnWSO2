@@ -1,1 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?><artifacts/>
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="learn-wso2-common-response-sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/learn-wso2-common-response-sequence.xml</file>
+    </artifact>
+    <artifact name="learn-wso2-generic-error-sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/learn-wso2-generic-error-sequence.xml</file>
+    </artifact>
+    <artifact name="learn-wso2-add-user-sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/learn-wso2-add-user-sequence.xml</file>
+    </artifact>
+    <artifact name="learn-wso2-add-user-validate-request-sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/learn-wso2-add-user-validate-request-sequence.xml</file>
+    </artifact>
+    <artifact name="user-api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/user-api.xml</file>
+    </artifact>
+    <artifact name="user-api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/user-api_swagger.yaml</file>
+    </artifact>
+    <artifact name="user-api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/user-api_metadata.yaml</file>
+    </artifact>
+    <artifact name="learn-wso2-add-user-validate-request" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/learn-wso2-add-user-validate-request.xml</file>
+    </artifact>
+    <artifact name="learn-wso2-get-users-sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/learn-wso2-get-users-sequence.xml</file>
+    </artifact>
+    <artifact name="learn-wso2-generic-success-response-sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/learn-wso2-generic-success-response-sequence.xml</file>
+    </artifact>
+    <artifact name="learn-wso2-get-sellers-sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/learn-wso2-get-sellers-sequence.xml</file>
+    </artifact>
+    <artifact name="learn-wso2-get-admins-sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/learn-wso2-get-admins-sequence.xml</file>
+    </artifact>
+    <artifact name="product-api" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/product-api.xml</file>
+    </artifact>
+    <artifact name="product-api_swagger" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/product-api_swagger.yaml</file>
+    </artifact>
+    <artifact name="product-api_metadata" groupId="com.example.metadata" version="1.0.0" type="synapse/metadata" serverRole="EnterpriseServiceBus">
+        <file>src/main/resources/metadata/product-api_metadata.yaml</file>
+    </artifact>
+    <artifact name="learn-wso2-add-product-sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/learn-wso2-add-product-sequence.xml</file>
+    </artifact>
+    <artifact name="learn-wso2-add-product-validate-request" groupId="com.example.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/learn-wso2-add-product-validate-request.xml</file>
+    </artifact>
+    <artifact name="learn-wso2-add-product-validate-request-sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/learn-wso2-add-product-validate-request-sequence.xml</file>
+    </artifact>
+    <artifact name="learn-wso2-add-products-sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/learn-wso2-add-products-sequence.xml</file>
+    </artifact>
+    <artifact name="learn-wso2-get-all-products-sequence" groupId="com.example.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/learn-wso2-get-all-products-sequence.xml</file>
+    </artifact>
+</artifacts>

@@ -9,9 +9,9 @@
   <name>learn-wso2</name>
   <description>learn-wso2</description>
   <modules>
+    <module>learn-wso2ESB</module>
     <module>learn-wso2GREG</module>
     <module>learn-wso2DS</module>
-    <module>learn-wso2ESB</module>
     <module>learn-wso2CAP</module>
   </modules>
   <scm>
